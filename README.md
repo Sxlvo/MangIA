@@ -1,198 +1,142 @@
+<div align="center">
+
+<img src="assets/images/mangia_logo.png" alt="Logo MangIA" width="160"/>
+
 # MangIA
 
-Applicazione mobile Flutter per il benessere alimentare e la consapevolezza nutrizionale.
+## Benessere alimentare, consapevolezza nutrizionale e AI simulata
+### Realizzata da: 
+Salvatore Lepore | 
+Lorenzo Olivola | 
+Salvador Davide Passarelli | 
+Nicolle Blanco 
+###
+Applicazione mobile Flutter progettata per aiutare studenti, studenti-lavoratori e giovani lavoratori a comprendere meglio le proprie abitudini alimentari quotidiane.
 
-Progetto realizzato per il corso di **Interazione Uomo Macchina**  
-Universita degli Studi di Salerno  
-Prof.ssa **G. Vitiello**  
-Anno accademico **2026**
+</div>
+
+---
+
+## Info progetto
+
+| Voce            | Dettaglio                         |
+| --------------- | --------------------------------- |
+| Corso           | Interazione Uomo Macchina         |
+| Università      | Università degli Studi di Salerno |
+| Prof.ssa        | G. Vitiello                       |
+| Anno accademico | 2026                              |
+| Tecnologia      | Flutter, Material 3, Riverpod     |
+| Stato           | Prototipo funzionante             |
+
+---
 
 ## Descrizione
 
-**MangIA** e un'app mobile pensata per aiutare studenti, studenti-lavoratori e giovani lavoratori a comprendere meglio le proprie abitudini alimentari quotidiane senza trasformare il monitoraggio in un conteggio rigido e ansiogeno di calorie.
+**MangIA** è un'app mobile pensata per supportare l’utente nella gestione quotidiana delle proprie abitudini alimentari, senza trasformare il monitoraggio in un conteggio rigido e ansiogeno di calorie.
 
-L'obiettivo principale non e sostituire un nutrizionista, ma supportare l'utente nel prendere decisioni piu consapevoli attraverso feedback semplici, discorsivi e immediati.
+L’obiettivo non è sostituire un nutrizionista, ma offrire feedback semplici, discorsivi e non giudicanti, aiutando l’utente a prendere decisioni più consapevoli durante la giornata.
 
-L'app segue i principi emersi durante gli assignment di IUM:
+L’app segue i principi emersi durante gli assignment di IUM:
 
-- riduzione del carico cognitivo;
-- navigazione stabile e prevedibile;
-- feedback non giudicante;
-- progressive disclosure;
-- supporto rapido nei momenti di routine frammentata;
-- tecnica del Mago di Oz per simulare funzioni AI non ancora collegate a servizi reali.
+* riduzione del carico cognitivo;
+* navigazione stabile e prevedibile;
+* feedback non giudicante;
+* progressive disclosure;
+* supporto rapido nei momenti di routine frammentata;
+* tecnica del Mago di Oz per simulare funzionalità AI non ancora collegate a servizi reali.
 
-## Funzionalita principali
+---
 
-### Home
+## Funzionalità principali
 
-- Riepilogo giornaliero con **Vitality Score**.
-- Card "Equilibrio della giornata" con feedback discorsivo.
-- Tracker idratazione rapido con pulsanti `+` e `-`.
-- Lista dei pasti recenti.
-- Accesso alle impostazioni utente.
+| Sezione         | Funzionalità                                                       |
+| --------------- | ------------------------------------------------------------------ |
+| Home            | Vitality Score, equilibrio giornaliero, idratazione, pasti recenti |
+| Scansione pasto | Fotocamera, overlay, analisi mock AI, aggiunta manuale             |
+| Analisi pasto   | Dettaglio pasto, suggerimenti, allergeni, chat contestuale         |
+| Chat AI         | Prompt rapidi, input vocale, risposte simulate                     |
+| Progressi       | Riepilogo settimanale, nutrizione, idratazione                     |
+| Esperti         | Lista specialisti, filtri, profilo, prenotazione consulto          |
+| Impostazioni    | Preferenze utente, unità di misura, configurazione idratazione     |
 
-### Scansione pasto
-
-- Schermata fotocamera integrata.
-- Overlay grafico per inquadrare il piatto.
-- Analisi mock del pasto tramite AI.
-- Gestione del caso "pasto non riconosciuto".
-- Form per aggiunta manuale del pasto.
-
-### Analisi pasto
-
-- Dettaglio del pasto riconosciuto.
-- Suggerimenti nutrizionali discorsivi.
-- Avvisi su possibili carenze o allergeni.
-- Chat contestuale con MangIA direttamente nella pagina di analisi.
-
-### Chat AI
-
-- Interfaccia conversazionale.
-- Prompt rapidi cliccabili.
-- Input vocale tramite microfono.
-- Risposte simulate con approccio non giudicante.
-
-### Progressi
-
-- Riepilogo settimanale.
-- Vitality Score.
-- Percentuale di idratazione collegata al contatore della Home.
-- Metriche sintetiche per nutrizione e idratazione.
-
-### Esperti
-
-- Lista di nutrizionisti/specialisti.
-- Match rate personalizzato.
-- Filtri per budget, specializzazione e disponibilita.
-- Pagina profilo dettagliata.
-- Pagina per prenotare un consulto.
-
-### Impostazioni
-
-- Preferenze utente.
-- Configurazione idratazione.
-- Scelta dell'unita di misura: bicchieri, millilitri o litri.
-- Personalizzazione della quantita di acqua per bicchiere.
-
-## Design e usabilita
-
-L'interfaccia e stata progettata con uno stile visivo calmo e rassicurante:
-
-- colore principale: **Mint / Green**;
-- sfondo chiaro e caldo;
-- card morbide;
-- navigazione inferiore sempre disponibile;
-- pulsante centrale per la scansione;
-- informazioni essenziali mostrate subito;
-- dettagli accessibili solo quando utili.
-
-Pattern di interaction design applicati:
-
-- **Go Back To a Safe Place**: l'utente puo tornare rapidamente a una schermata conosciuta.
-- **Current Location Indicator**: la navigazione evidenzia la sezione attiva.
-- **Progressive Disclosure**: la Home mostra solo le informazioni essenziali.
-- **Wizard of Oz / Mago di Oz**: le funzionalita AI sono simulate tramite servizi mock, predisposti per endpoint reali.
-
-## Stack tecnologico
-
-- **Flutter**
-- **Material 3**
-- **Riverpod**
-- **Camera plugin**
-- **Speech to Text**
-- Architettura modulare per separare UI, stato, modelli e servizi.
+---
 
 ## Architettura del progetto
 
 ```text
 lib/
-|-- main.dart
-|-- app/
-|   |-- app_shell.dart
-|   `-- mangia_app.dart
-|-- core/
-|   |-- app_colors.dart
-|   |-- app_theme.dart
-|   `-- navigation.dart
-|-- models/
-|   `-- models.dart
-|-- providers/
-|   `-- app_providers.dart
-|-- screens/
-|   |-- chat/
-|   |-- experts/
-|   |-- home/
-|   |-- scan/
-|   |-- settings/
-|   `-- stats/
-|-- services/
-|   |-- ai_nutrition_api.dart
-|   `-- mangia_backend.dart
-`-- widgets/
-    `-- shared_widgets.dart
+├── main.dart
+├── app/
+│   ├── app_shell.dart
+│   └── mangia_app.dart
+├── core/
+│   ├── app_colors.dart
+│   ├── app_theme.dart
+│   └── navigation.dart
+├── models/
+│   └── models.dart
+├── providers/
+│   └── app_providers.dart
+├── screens/
+│   ├── chat/
+│   ├── experts/
+│   ├── home/
+│   ├── scan/
+│   ├── settings/
+│   └── stats/
+├── services/
+│   ├── ai_nutrition_api.dart
+│   └── mangia_backend.dart
+└── widgets/
+    └── shared_widgets.dart
 ```
 
-### Scelte architetturali
+---
 
-- `main.dart` contiene solo l'avvio dell'app.
-- `app/` contiene configurazione generale e shell di navigazione.
-- `core/` contiene tema, colori e utility di navigazione.
-- `models/` contiene le entita principali del dominio.
-- `providers/` contiene provider e controller Riverpod.
-- `services/` contiene interfacce e mock per AI/backend.
-- `screens/` contiene le schermate principali.
-- `widgets/` contiene componenti riutilizzabili.
+## Design e usabilità
 
-## Servizi mock e predisposizione backend
+L’interfaccia è stata progettata con uno stile visivo calmo e rassicurante:
 
-Il progetto non usa un backend reale. Le informazioni sono simulate nel codice per rispettare le specifiche dell'Assignment 4.
+* colore principale: **Mint / Green**;
+* sfondo chiaro e caldo;
+* card morbide;
+* navigazione inferiore sempre disponibile;
+* pulsante centrale per la scansione;
+* informazioni essenziali mostrate subito;
+* dettagli accessibili solo quando utili.
 
-Sono comunque presenti interfacce gia predisposte:
+Pattern applicati:
 
-- `AiNutritionApi`: per collegare in futuro un servizio AI reale.
-- `MangiaBackend`: per collegare Firebase, Firestore o un backend custom.
+* **Go Back To a Safe Place**
+* **Current Location Indicator**
+* **Progressive Disclosure**
+* **Wizard of Oz / Mago di Oz**
 
-I mock attuali simulano:
+---
 
-- riconoscimento del pasto;
-- suggerimenti nutrizionali;
-- chat AI;
-- lista esperti;
-- salvataggio idratazione.
+## Stack tecnologico
 
-## Requisiti
+* Flutter
+* Material 3
+* Riverpod
+* Camera plugin
+* Speech to Text
+* Servizi mock predisposti per backend reale
 
-- Flutter SDK installato.
-- Android Studio o VS Code.
-- Emulatore Android o dispositivo Android reale.
-- Per fotocamera e microfono e consigliato un dispositivo reale.
+---
 
 ## Installazione
-
-Clonare il repository:
 
 ```bash
 git clone <url-repository>
 cd mang_ia
-```
-
-Installare le dipendenze:
-
-```bash
 flutter pub get
-```
-
-Avviare l'app:
-
-```bash
 flutter run
 ```
 
-## Build APK
+---
 
-Per generare un APK installabile:
+## Build APK
 
 ```bash
 flutter build apk --release
@@ -204,69 +148,52 @@ Output:
 build/app/outputs/flutter-apk/app-release.apk
 ```
 
-Per generare APK separati per architettura:
-
-```bash
-flutter build apk --split-per-abi
-```
+---
 
 ## Test e analisi
 
-Analisi statica:
-
 ```bash
 dart analyze
-```
-
-Test Flutter:
-
-```bash
 flutter test
 ```
 
+---
+
 ## Permessi Android
 
-L'app richiede:
+L’app richiede:
 
-- fotocamera;
-- microfono.
+* fotocamera;
+* microfono.
 
-Questi permessi sono necessari per:
+Questi permessi sono necessari per la scansione del pasto e per l’input vocale nella chat AI.
 
-- scansione del pasto;
-- input vocale nella chat AI.
-
-Su emulatore alcune funzioni possono dipendere dalla configurazione dell'AVD. Per la camera virtuale e consigliato impostare:
-
-```text
-Back Camera: VirtualScene
-```
+---
 
 ## Limitazioni attuali
 
-- L'AI e simulata tramite mock.
-- Il riconoscimento del pasto non usa ancora un modello reale.
-- Il match con esperti e calcolato tramite dati statici.
-- Non e presente autenticazione.
-- Non e presente persistenza reale su database.
+* L’AI è simulata tramite mock.
+* Il riconoscimento del pasto non usa ancora un modello reale.
+* Il match con esperti è calcolato tramite dati statici.
+* Non è presente autenticazione.
+* Non è presente persistenza reale su database.
+
+---
 
 ## Possibili sviluppi futuri
 
-- Integrazione Firebase per utenti, preferenze e storico pasti.
-- Collegamento a un'API AI reale per riconoscimento immagini e chat.
-- Sistema di notifiche per idratazione e pasti.
-- Dashboard settimanale piu dettagliata.
-- Prenotazione reale con calendario.
-- Accessibilita avanzata e test con utenti reali.
+* Integrazione Firebase.
+* Collegamento a un’API AI reale.
+* Notifiche per idratazione e pasti.
+* Dashboard settimanale più dettagliata.
+* Prenotazione reale con calendario.
+* Test di accessibilità con utenti reali.
 
-## Autori
-
-Progetto sviluppato nell'ambito del corso di **Interazione Uomo Macchina**.
-
-Gruppo di progetto: **MangIA**  
-Prof.ssa: **G. Vitiello**  
-Anno: **2026**
+---
 
 ## Nota accademica
 
-MangIA e un prototipo funzionante realizzato a fini didattici. Le informazioni nutrizionali mostrate sono simulate e non devono essere considerate diagnosi, prescrizioni o sostituti del parere di un professionista sanitario.
+**MangIA** è un prototipo funzionante realizzato a fini didattici.
+Le informazioni nutrizionali mostrate sono simulate e non devono essere considerate diagnosi, prescrizioni o sostituti del parere di un professionista sanitario.
+
+---
