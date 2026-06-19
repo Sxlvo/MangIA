@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="assets/images/mangia_logo.png" alt="Logo MangIA" width="160"/>
-
-# MangIA
+<img width="170" height="54" alt="image" src="https://github.com/user-attachments/assets/2ea6bafa-3048-4d24-b7d4-7fa4158dbda9"/>
 
 ## Benessere alimentare, consapevolezza nutrizionale e AI simulata
 ### Realizzata da: 
